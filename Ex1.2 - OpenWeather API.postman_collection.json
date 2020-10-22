@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "903d3c71-5c52-4c41-a4d0-1c6ebc7c490f",
+		"name": "Ex1.2 - OpenWeather API",
+		"description": "Collection used for Exercise 1.2 of Postman Expert training. ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Current Weather",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b5c6cc6c-2ebf-4bc4-845c-d60241c4e4af",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q=Sydney,{{country}}&APPID=fdb52316dc1666b0a57b5dbe9bd8ca46",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Sydney,{{country}}"
+						},
+						{
+							"key": "APPID",
+							"value": "fdb52316dc1666b0a57b5dbe9bd8ca46"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get 5 day forecast",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c9b8878-f7ea-48b4-a39a-d2e7bff0c20c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/forecast?q=Sidney,{{country}}&APPID=fdb52316dc1666b0a57b5dbe9bd8ca46",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"forecast"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Sidney,{{country}}"
+						},
+						{
+							"key": "APPID",
+							"value": "fdb52316dc1666b0a57b5dbe9bd8ca46"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3b52cc96-6a61-4732-86e4-89529912c9fa",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "37bd56bb-926f-4793-85a0-64ef5a37ba65",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
